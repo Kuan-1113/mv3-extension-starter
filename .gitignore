@@ -1,0 +1,19 @@
+# Build output
+*.zip
+
+# Never commit signing keys if you add licensing (see chrome-ext-offline-license)
+*private*
+*.pem
+keys-*.csv
+licenses-*.csv
+*SECRET*
+.env
+
+# Editors / OS
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+__pycache__/
+*.pyc
+node_modules/

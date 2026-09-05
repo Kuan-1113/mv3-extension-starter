@@ -1,0 +1,34 @@
+/* Injected into arbitrary pages. Every rule is namespaced and every value is
+   forced, because the host page's CSS is hostile by default — resets, global
+   * selectors, and !important rules will all land on your UI otherwise. */
+.mv3s-overlay {
+  position: fixed !important;
+  inset: 0 !important;
+  z-index: 2147483647 !important;   /* max: still loses to some full-screen apps */
+  background: rgba(0, 0, 0, .35) !important;
+  cursor: crosshair !important;
+}
+.mv3s-panel {
+  position: fixed !important;
+  right: 20px !important;
+  bottom: 20px !important;
+  z-index: 2147483647 !important;
+  max-width: 380px !important;
+  padding: 14px 16px !important;
+  border-radius: 12px !important;
+  background: #fff !important;
+  color: #111 !important;
+  font: 13px/1.6 system-ui, sans-serif !important;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, .28) !important;
+}
+.mv3s-panel button {
+  font: inherit !important;
+  padding: 6px 12px !important;
+  margin-right: 6px !important;
+  border: 1px solid #d0d7de !important;
+  border-radius: 8px !important;
+  background: #fff !important;
+  color: #111 !important;
+  cursor: pointer !important;
+}
+.mv3s-err { color: #dc2626 !important; }

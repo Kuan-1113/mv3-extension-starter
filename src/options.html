@@ -1,0 +1,40 @@
+<meta charset="utf-8">
+<title>MV3 Starter — guide and settings</title>
+<link rel="stylesheet" href="options.css">
+
+<header>
+  <h1>MV3 Starter</h1>
+  <span id="plan" class="badge">—</span>
+</header>
+
+<section class="card">
+  <h2>How to use it</h2>
+  <ol class="steps">
+    <li>Press <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>Y</kbd>, or click the toolbar icon</li>
+    <li>The panel appears bottom-right with the result, already ready to copy</li>
+    <li><kbd>Esc</kbd> closes it</li>
+  </ol>
+  <p class="muted small">
+    This page opens by itself the first time the extension is installed. That is
+    deliberate: nobody discovers a right-click menu or a keyboard shortcut on
+    their own, and a feature nobody finds may as well not exist.
+  </p>
+</section>
+
+<section class="card">
+  <h2>Settings</h2>
+  <label class="row">
+    <input id="autoCopy" type="checkbox">
+    <span>Copy the result automatically</span>
+  </label>
+  <div id="saved" class="msg"></div>
+</section>
+
+<footer class="muted small">
+  Everything stays in this browser profile. Nothing is uploaded, because this
+  extension has no network permission — check the permissions row under
+  <code>chrome://extensions</code> yourself.
+</footer>
+
+<script src="lib/guard.js"></script>
+<script src="options.js"></script>
