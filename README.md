@@ -106,6 +106,37 @@ MV3 會把很多本來能動的東西弄壞,而且**壞得無聲無息**:service
 
 把 `src/offscreen.js` 的 `doWork()` 換成你的東西就能開始。
 
+## Running in production
+
+The code here is not a demo. It ships in two extensions on the Chrome Web Store:
+
+- [**Screenshot OCR — Chinese & Japanese, offline**](https://chromewebstore.google.com/detail/pgfnobkogofkjapcmaoekajipgpaknnm) — four Tesseract
+  language models bundled in the package, recognition in an offscreen document,
+  and no network permission at all.
+- [**PDF Editor — fill forms in Chinese, offline**](https://chromewebstore.google.com/detail/bmbnonjkhhaamehmkhjihcagalijcdoj) — pdf-lib with an
+  embedded, subsetted CJK font.
+
+Both are free with an optional one-time paid tier, which is what the offline
+licensing here exists to serve.
+
+## If you searched for one of these
+
+Every item below is a real MV3 failure that produces no useful error:
+
+- `Could not establish connection. Receiving end does not exist.`
+- `Extension context invalidated.`
+- `Only a single offscreen document may be created.`
+- `Refused to compile or instantiate WebAssembly module because 'unsafe-eval'
+  is not an allowed source of script`
+- manifest v3 service worker keeps going inactive / dies after 30 seconds
+- chrome.runtime.sendMessage no response, promise never resolves
+- how to use canvas / DOM / WASM in a manifest v3 service worker
+- copy to clipboard in an extension without the `clipboardWrite` permission
+
+The first two and the message-passing one are all the same root cause: the
+worker is asleep. The fix is not to keep it alive — it is to make every hop
+time out and every handler always reply.
+
 ---
 
 MIT
