@@ -137,6 +137,20 @@ The first two and the message-passing one are all the same root cause: the
 worker is asleep. The fix is not to keep it alive — it is to make every hop
 time out and every handler always reply.
 
+## Related
+
+- [**chrome-webstore-launch**](https://github.com/Kuan-1113/chrome-webstore-launch)
+  — store assets in the format the store accepts, and a preflight before upload
+- [**chrome-ext-offline-license**](https://github.com/Kuan-1113/chrome-ext-offline-license)
+  — paid features with no licence server and no network permission
+- [**pdf-lib-cjk**](https://github.com/Kuan-1113/pdf-lib-cjk)
+  — write Chinese, Japanese and Korean into a PDF that Chrome will actually draw
+
+The two above are MIT and complete on their own. If you would rather not spend
+the afternoon assembling the fulfilment side and the submission paperwork, I
+packaged both as [paid kits](https://7568880033463.gumroad.com/l/nsoynq) — the
+cryptography and the tooling stay free here either way.
+
 ---
 
 MIT
